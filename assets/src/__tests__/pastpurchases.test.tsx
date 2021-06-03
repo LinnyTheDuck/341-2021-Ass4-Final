@@ -29,3 +29,41 @@ describe("Past Purchases Title Test", () => {
         expect(wrapper.contains(heading)).toEqual(true); // check if heading matches
     })
 })
+
+/// CREATING A TEST USER
+const testUserAttributes = {
+    email: "email@email.com"
+}
+const testUser = {
+    id: 1234567890,
+    username: "hi",
+    attributes: testUserAttributes
+}
+
+describe("Order Date Test", () => {
+    test("Order Date Render Heading Should 'Order date: mm/dd/yyyy hh:mm'", () => {
+        const NumDate = 12345; // Create a date but as an integer
+        const date = new Date(NumDate); // turn into a date (line below formats as a string)
+        const day = `${date.getMonth()}/${date.getDate()}/${date.getFullYear()} ${date.getHours()}:${date.getMinutes() < 10 ? '0' : ''}${date.getMinutes()}`;
+
+        const wrapper = mount(<PastPurchase/>); // render the page
+
+        wrapper.setState({ // create and set the orders array state (0th item in array)
+            orders: [{ // purchases interface
+                orderDate: NumDate, 
+                orderId: "test", 
+                books: [{ // order interface
+                    bookId: "test", 
+                    quantity: 1, 
+                    price: 10
+                }]
+            }]
+        });
+
+        wrapper.setState({userInfo: testUser}); // set test user
+        wrapper.setState({isLoading: false}); // set isloading
+        
+        const heading = <h4>{`Order date: ${day}`}</h4>; // define what the heading should be
+        expect(wrapper.contains(heading)).toEqual(true); // check if heading matches
+    })
+})
