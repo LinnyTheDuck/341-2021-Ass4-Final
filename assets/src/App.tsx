@@ -1,4 +1,4 @@
-import { Auth } from "aws-amplify";
+mport { Auth } from "aws-amplify";
 import React, { Component, Fragment } from "react";
 import { LinkContainer } from "react-router-bootstrap";
 import { Link, withRouter } from "react-router-dom";
