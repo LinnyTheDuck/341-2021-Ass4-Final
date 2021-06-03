@@ -12,3 +12,10 @@ it("Renders Without Crashing", () => {
     shallow(<PastPurchase />);
 });
 
+describe("Past Purchases Title Test", () => {
+    test("Past Purchases Render Heading Should Be: ‘Past purchases’", () => {
+        const heading = <h3>Past purchases</h3>; // define what the heading should be
+        const wrapper = shallow(<PastPurchase />); // render the past purchases page 
+        expect(wrapper.contains(heading)).toEqual(true); // check if heading matches
+    })
+})
