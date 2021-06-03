@@ -5,7 +5,7 @@
 # fi
 # echo 'config check passed!'
 #npm install
-echo $(npm run build)
+npm run build
 # cd src/__tests__
 # npm run test
 # cd ../..
