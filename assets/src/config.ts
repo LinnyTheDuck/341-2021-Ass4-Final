@@ -1,3 +1,4 @@
+// Stefenie Pickston 1506427
 export default {
   apiGateway: {
     REGION: "us-east-1",

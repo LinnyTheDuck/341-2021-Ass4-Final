@@ -1,3 +1,4 @@
+// Stefenie Pickston 1506427
 export const categories = {
   cooks: "Cookbooks",
   database: "Database",

@@ -1,9 +1,9 @@
-# echo $(python3 StaticCheck.py)
-# if [ $(python3 StaticCheck.py) = 0 ]; then
-# 	echo 'config not present!'
-# 	exit 2
-# fi
-# echo 'config check passed!'
+echo $(python3 StaticCheck.py)
+if [ $(python3 StaticCheck.py) = 0 ]; then
+	echo 'config not present!'
+	exit 2
+fi
+echo 'config check passed!'
 #npm install
 npm run build
 # cd src/__tests__
