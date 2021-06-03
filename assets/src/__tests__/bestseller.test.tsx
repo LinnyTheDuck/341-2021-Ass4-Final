@@ -13,4 +13,10 @@ it("Renders Without Crashing", () => {
     shallow(<Bestseller />);
   });
 
-
+describe("Bestseller Title Test", () => {
+    test("BestSellers Render Heading Should Be: ‘Top 20 best sellers’", () => {
+        const heading = <h3>Top 20 best sellers</h3>; // define what the heading should be
+        const wrapper = shallow(<Bestseller />); // rendr the bestseller page
+        expect(wrapper.contains(heading)).toEqual(true); // check if heading matches
+    })
+})
